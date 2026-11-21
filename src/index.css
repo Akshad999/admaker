@@ -1,0 +1,174 @@
+@import "tailwindcss";
+
+@layer utilities {
+  .glass-card {
+    background: rgba(15, 17, 35, 0.7);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .glass-card-purple {
+    background: rgba(30, 27, 65, 0.6);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(139, 92, 246, 0.25);
+  }
+
+  .glass-header {
+    background: rgba(9, 9, 19, 0.85);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  .text-gradient {
+    background: linear-gradient(135deg, #818cf8 0%, #c084fc 50%, #e879f9 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .text-gradient-purple {
+    background: linear-gradient(135deg, #a855f7 0%, #6366f1 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .glow-purple {
+    box-shadow: 0 0 35px -5px rgba(124, 58, 237, 0.35);
+  }
+
+  .glow-indigo {
+    box-shadow: 0 0 45px -5px rgba(99, 102, 241, 0.4);
+  }
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #090a15;
+}
+::-webkit-scrollbar-thumb {
+  background: #252848;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #3b3f70;
+}
+
+/* 🎬 COMMERCIAL MARKET AD ANIMATIONS & FEATURE OVERLAYS */
+
+/* 1. Commercial Light Sweep Beam (Stage Lighting around image) */
+@keyframes specularGleam {
+  0% {
+    transform: translateX(-150%) skewX(-25deg);
+    opacity: 0;
+  }
+  30% {
+    opacity: 0.85;
+  }
+  60% {
+    transform: translateX(250%) skewX(-25deg);
+    opacity: 0.95;
+  }
+  100% {
+    transform: translateX(250%) skewX(-25deg);
+    opacity: 0;
+  }
+}
+
+.animate-specular-gleam {
+  animation: specularGleam 2.8s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+/* 2. Feature Spec Card Pop Out Left & Right */
+@keyframes cardPopOutRight {
+  0% {
+    opacity: 0;
+    transform: translateX(40px) scale(0.7);
+  }
+  70% {
+    opacity: 1;
+    transform: translateX(-5px) scale(1.05);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+@keyframes cardPopOutLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-40px) scale(0.7);
+  }
+  70% {
+    opacity: 1;
+    transform: translateX(5px) scale(1.05);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+.animate-card-pop-right {
+  animation: cardPopOutRight 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+.animate-card-pop-left {
+  animation: cardPopOutLeft 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+/* 3. Subtitle Pulse Animation */
+@keyframes captionPulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.12); opacity: 0.95; }
+}
+
+.animate-caption-pulse {
+  animation: captionPulse 0.3s ease-out;
+}
+
+/* 4. Background Neon Aura Pulse Ring */
+@keyframes pulseAuraRing {
+  0% {
+    transform: scale(0.85);
+    opacity: 0.3;
+  }
+  50% {
+    transform: scale(1.15);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(0.85);
+    opacity: 0.3;
+  }
+}
+
+.animate-aura-ring {
+  animation: pulseAuraRing 3.2s infinite ease-in-out;
+}
+
+/* 5. Stage Spotlight Sweep Overhead */
+@keyframes spotlightSweep {
+  0% {
+    transform: rotate(-15deg) translateY(0);
+    opacity: 0.4;
+  }
+  50% {
+    transform: rotate(15deg) translateY(-10px);
+    opacity: 0.8;
+  }
+  100% {
+    transform: rotate(-15deg) translateY(0);
+    opacity: 0.4;
+  }
+}
+
+.animate-spotlight-sweep {
+  animation: spotlightSweep 5s infinite ease-in-out;
+}

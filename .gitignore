@@ -1,0 +1,47 @@
+# # Logs
+# logs
+# *.log
+# npm-debug.log*
+# yarn-debug.log*
+# yarn-error.log*
+# pnpm-debug.log*
+# lerna-debug.log*
+
+# node_modules
+# dist
+# dist-ssr
+# *.local
+
+# # Editor directories and files
+# .vscode/*
+# !.vscode/extensions.json
+# .idea
+# .DS_Store
+# *.suo
+# *.ntvs*
+# *.njsproj
+# *.sln
+# *.sw?
+# Existing entries...
+node_modules
+dist
+dist-ssr
+
+# Vite & Build Caches (Crucial for AI tools)
+.vite
+.vite/
+.vite-temp/
+
+# Large Archives & Binaries (Agent crash hone ka sabse bada reason)
+*.zip
+*.tar.gz
+*.rar
+
+# Lockfiles (AI agent ko 20k+ lines scan nahi karni padegi)
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Antigravity / IDE internal states
+.antigravity
+.cortex
